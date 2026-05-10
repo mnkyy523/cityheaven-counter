@@ -12,14 +12,18 @@ const fs = require('fs');
   await page.goto(
     'https://www.cityheaven.net/tokyo/A1311/A131101/y-versailles/girllist/',
     {
-      waitUntil: 'networkidle',
+      waitUntil: 'domcontentloaded',
       timeout: 60000
     }
   );
 
-  const text = await page.textContent('body');
+  await page.waitForTimeout(5000);
 
-  const match = text.match(/(\d+)人中/);
+  const text = await page.locator('body').innerText();
+
+  console.log(text);
+
+  const match = text.match(/(\d+)人/);
 
   const count = match ? match[1] : '取得失敗';
 
