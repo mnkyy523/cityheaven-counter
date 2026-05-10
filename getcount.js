@@ -19,7 +19,7 @@ const fs = require('fs');
 
   const text = await page.textContent('body');
 
-  const match = text.match(/(\\d+)人中/);
+  const match = text.match(/(\d+)人中/);
 
   const count = match ? match[1] : '取得失敗';
 
