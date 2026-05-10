@@ -1,0 +1,12 @@
+{
+  "name": "cityheaven-counter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node getcount.js"
+  },
+  "dependencies": {
+    "playwright": "^1.52.0"
+  }
+}
